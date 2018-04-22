@@ -1,8 +1,9 @@
 const UserController = require('../controllers/user-controller');
 module.exports = server => {
-    server.get('/users',UserController.getUsers);
+    server.get('/users',UserController.readAll);
     server.get('/user/:id',
-        UserController.getUser); // les controllers sont mis dans les routes
+        UserController.read); // les controllers sont mis dans les routes
+    server.post('/user' , UserController.create);
 }
 
 
